@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html <="en">
+<head>
+    <meta <="UTF-8">
+</head>
+<body <="background-color: DarkKhaki">
+<ul type="none">
+      <li ><a href="site.html">Рецепты дня</a></li> 
+      <li><a href="первые блюда.html">Салаты</a></li>	  
+      <li><a href="таблица рецептов.html"><b>Таблица рецептов</b></a></li>
+    </ul>
+<details>
+    <summary>График</summary>
+    <form>
+        <table cellspacing="10">
+            <tr>
+                <td valign="top">
+
+                    <legend><strong>Значение по оси OХ</strong></legend>
+                    <input type="radio" name="ox" value="категория">Категория<br>
+                    <input type="radio" name="ox" value="тип">тип<br>
+                    <input type="radio" name="ox" value="сложность">Сложность
+                </td>
+                <td valign="top">
+                    <legend><strong>Результат</strong></legend>
+                    <input type="checkbox" name="result" value="макс">Максимальное время приготовления<br>
+                    <input type="checkbox" name="result" value="мин">Минимальное время приготовления<br>
+                    <input type="checkbox" name="result" value="колво">Количество блюд
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="Построить">
+    </form>
+</details>
+<details>
+    <summary>Фильтр</summary>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    Категория:
+                </td>
+                <td>
+                    <input type="text" id=name placeholder="Введите категорию">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Тип:
+                </td>
+                <td>
+                    <input type="text" placeholder="Введите тип">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Название:
+                </td>
+                <td>
+                    <input type="text" placeholder="Введите название">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Сложность (от 1):
+                </td>
+                <td>
+                    <input type="number" min="1" max="10"  placeholder="Введите сложность">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Год (до 10):
+                </td>
+                <td>
+                    <input type="number" min="1" max="10" placeholder="Введите сложность">
+                </td>
+            </tr>
+            <tr> 
+                <td>
+                    Время приготовления(от):
+                </td>
+                <td>
+                    <input type="number" min="10" max="200" step="5"  placeholder="Введите время пригоовления">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Время приготовления(до):
+                </td>
+                <td>
+                    <input type="number" min="10" max="200" step="5"  placeholder="Введите время приготовления">
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="Найти">
+    </form>
+</details>
+<details>
+    <summary>Сортировка</summary>
+    <form>
+        <table>
+            <tr>
+                <td>
+                    Первый уровень:
+                </td>
+                <td>
+                    <select>
+                        <option value="0">
+                            Категория
+                        </option>
+                        <option  value="1">
+                            Тип
+                        </option>
+                        <option value="2">
+                            Название
+                        </option>
+                        <option value="3">
+                            Сложность
+                        </option>
+                        <option value="4">
+                            Время приготовления
+                        </option>
+                    </select>
+                </td>
+                <td>
+                    по убыванию?
+                </td>
+                <td>
+                    <input type="checkbox" name="ack1" value="ack1">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Второй уровень:
+                </td>
+                <td>
+                    <select>
+                        <option value="0">
+                            Категория
+                        </option>
+                        <option  value="1">
+                            Тип
+                        </option>
+                        <option value="2">
+                            Название
+                        </option>
+                        <option value="3">
+                            Сложность
+                        </option>
+                        <option value="4">
+                            Время приготовления
+                        </option>
+                    </select>
+                </td>
+                <td>
+                    по убыванию?
+                </td>
+                <td>
+                    <input type="checkbox" name="ack2" value="ack2">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Третий уровень:
+                </td>
+                <td>
+                    <select>
+                         <option value="0">
+                            Категория
+                        </option>
+                        <option  value="1">
+                            Тип
+                        </option>
+                        <option value="2">
+                            Название
+                        </option>
+                        <option value="3">
+                            Сложность
+                        </option>
+                        <option value="4">
+                            Время приготовления
+                        </option>
+                    </select>
+                </td>
+                <td>
+                    по убыванию?
+                </td>
+                <td>
+                    <input type="checkbox" name="ack2" value="ack2">
+                </td>
+            </tr>
+        </table>
+        <input type="button" value="Сортировать">
+    </form>
+</details>
+<table border="1" width="80%" cellpadding="0" cellspacing="0">
+    <tr>
+        <td>Категория</td>
+        <td>Тип</td>
+        <td>Название</td>
+        <td>Сложность</td>
+        <td>Время приготовления</td>
+    </tr>
+    <tr>
+        <td>Десерт</td>
+        <td>Торт</td>
+        <td>Наполеон</td>
+        <td>6</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>Первое блюдо</td>
+        <td>Суп</td>
+        <td>Борщ</td>
+        <td>4</td>
+        <td>65</td>
+    </tr>
+    <tr>
+        <td>Второе блюдо</td>
+        <td>Спагетти</td>
+        <td>Спагетти с курицей в сливочном соусе</td>
+        <td>5</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>Десерт</td>
+        <td>Пирожное</td>
+        <td>Брауни с шоколадом</td>
+        <td>2</td>
+        <td>55</td>
+    </tr>
+    <tr>
+        <td>Салат</td>
+        <td>Салат</td>
+        <td>Мимоза</td>
+        <td>2</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>Гарнир</td>
+        <td>Гарнир</td>
+        <td>Картофельное пюре</td>
+        <td>1</td>
+        <td>30</td>
+    </tr>
+    <tr>
+        <td>Первое блюдо</td>
+        <td>суп</td>
+        <td>Сайровый суп</td>
+        <td>2</td>
+        <td>35</td>
+    </tr>
+    <tr>
+        <td>Десерт</td>
+        <td>Торт</td>
+        <td>Красный бархат</td>
+        <td>3</td>
+        <td>110</td>
+    </tr>
+    <tr>
+        <td>Первое блюдо</td>
+        <td>Суп</td>
+        <td>Жаркое из курицы</td>
+        <td>2</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Второе блюдо</td>
+        <td>Мясное</td>
+        <td>Котлеты по-киевски</td>
+        <td>7</td>
+        <td>65</td>
+    </tr>
+    <tr>
+        <td>Салат</td>
+        <td>Салат</td>
+        <td>Греческий</td>
+        <td>1</td>
+        <td>15</td>
+    </tr>
+    <tr>
+        <td>Закуска</td>
+        <td>Закуска</td>
+        <td>Бутерброды</td>
+        <td>1</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>Первое блюдо</td>
+        <td>Мясное</td>
+        <td>Тушёная картошка со свининой</td>
+        <td>3</td>
+        <td>45</td>
+    </tr>
+    <tr>
+        <td>Десерт</td>
+        <td>Пирожное</td>
+        <td>Меренга</td>
+        <td>5</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Гарнир</td>
+        <td>Гарнир</td>
+        <td>Кукурузная каша</td>
+        <td>1</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>Второе блюдо</td>
+        <td>Мясное</td>
+        <td>Нескучная грудка</td>
+        <td>4</td>
+        <td>65</td>
+    </tr>
+    <tr>
+        <td>Закуска</td>
+        <td>Закуска</td>
+        <td>Тортик закусочный</td>
+        <td>9</td>
+        <td>65</td>
+    </tr>
+    <tr>
+        <td>Десерт</td>
+        <td>Пирожное</td>
+        <td>Нежный медовый бисквит</td>
+        <td>3</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Первое блюдо</td>
+        <td>Суп</td>
+        <td>Летний холодник</td>
+        <td>10</td>
+        <td>55</td>
+    </tr>
+    <tr>
+        <td>Закуска</td>
+        <td>Закуска</td>
+        <td>Закуска на чипсах</td>
+        <td>1</td>
+        <td>15</td>
+    </tr>
+    <tr>
+        <td>Первое блюдо</td>
+        <td>Суп</td>
+        <td>Гречневый суп</td>
+        <td>1</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Десерт</td>
+        <td>Пирожное</td>
+        <td>Картошка</td>
+        <td>1</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>Салат</td>
+        <td>Салат</td>
+        <td>Мамина радость</td>
+        <td>1</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>Второе блюдо</td>
+        <td>Рыба</td>
+        <td>Рыба в белом соусе</td>
+        <td>2</td>
+        <td>30</td>
+    </tr>
+    <tr>
+        <td>Десерт</td>
+        <td>Пирожное</td>
+        <td>Шоколадно-вишневое пирожное</td>
+        <td>2</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Второе блюдо</td>
+        <td>Котлеты</td>
+        <td>Котлеты гречневые</td>
+        <td>2</td>
+        <td>55</td>
+    </tr>
+    <tr>
+        <td>Гарнир</td>
+        <td>Гарнир</td>
+        <td>Цветная капуста</td>
+        <td>2</td>
+        <td>35</td>
+    </tr>
+    <tr>
+        <td>Салат</td>
+        <td>Салат</td>
+        <td>Зодиак</td>
+        <td>1</td>
+        <td>30</td>
+    </tr>
+    <tr>
+        <td>Закуска</td>
+        <td>Закуска</td>
+        <td>Фахитос с курицей</td>
+        <td>1</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>Десерт</td>
+        <td>Пирожное</td>
+        <td>Трубочка с заварным кремом</td>
+        <td>2</td>
+        <td>30</td>
+    </tr>
+    <tr>
+        <td>Закуска</td>
+        <td>Закуска</td>
+        <td>Гренки</td>
+        <td>1</td>
+        <td>15</td>
+    </tr>
+    <tr>
+        <td>Первое блюдо</td>
+        <td>Суп</td>
+        <td>Суп с фрикадельками</td>
+        <td>2</td>
+        <td>55</td>
+    </tr>
+    <tr>
+        <td>Гарнир</td>
+        <td>Гарнир</td>
+        <td>Чечевица</td>
+        <td>1</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>Второе блюдо</td>
+        <td>Овощное</td>
+        <td>Овощное рагу</td>
+        <td>5</td>
+        <td>45</td>
+    </tr>
+    <tr>
+        <td>Десерт</td>
+        <td>Торт</td>
+        <td>Домашний</td>
+        <td>10</td>
+        <td>120</td>
+    </tr>
+    <tr>
+        <td>Гарнир</td>
+        <td>Гарнир</td>
+        <td>Пшеничная каша</td>
+        <td>1</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>Салат</td>
+        <td>Салат</td>
+        <td>Селедка под шубой</td>
+        <td>2</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>Первое блюдо</td>
+        <td>Суп</td>
+        <td>Грибной суп</td>
+        <td>4</td>
+        <td>35</td>
+    </tr>
+    <tr>
+        <td>Десерт</td>
+        <td>Торт</td>
+        <td>Прага</td>
+        <td>7</td>
+        <td>130</td>
+    </tr>
+    <tr>
+        <td>Закуска</td>
+        <td>Закуска</td>
+        <td>Форшмак</td>
+        <td>1</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>Второе блюдо</td>
+        <td>Мясное</td>
+        <td>Голубцы по-закарпатски</td>
+        <td>6</td>
+        <td>45</td>
+    </tr>
+    <tr>
+        <td>Гарнир</td>
+        <td>Гарнир</td>
+        <td>Макароны</td>
+        <td>1</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>Салат</td>
+        <td>Салат</td>
+        <td>Карусель</td>
+        <td>1</td>
+        <td>35</td>
+    </tr>
+    <tr>
+        <td>Второе блюдо</td>
+        <td>Мясное</td>
+        <td>Рагу</td>
+        <td>4</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>Закуска</td>
+        <td>Закуска</td>
+        <td>Роллы по-домашнему</td>
+        <td>1</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>Салат</td>
+        <td>Салат</td>
+        <td>Цезарь</td>
+        <td>1</td>
+        <td>30</td>
+    </tr>
+    <tr>
+        <td>Гарнир</td>
+        <td>Гарнир</td>
+        <td>Гречка</td>
+        <td>1</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>Второе блюдо</td>
+        <td>Котлеты</td>
+        <td>Куриные котлеты на пару</td>
+        <td>2</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Первое блюдо</td>
+        <td>Суп</td>
+        <td>Куриный суп с клёцками</td>
+        <td>3</td>
+        <td>55</td>
+    </tr>
+    <tr>
+        <td>Десерт</td>
+        <td>Пирог</td>
+        <td>Пирог с рыбой</td>
+        <td>4</td>
+        <td>120</td>
+    </tr>
+</table>
+</body>
+</html>
+
